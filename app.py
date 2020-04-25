@@ -12,7 +12,7 @@ def load_prev():
                 app_lists = infile.split(',')
                 for app in app_lists:
                     if app.split():
-                        lablel = tk.Label(frame, text=app, bg="gray")
+                        lablel = tk.Label(frame, text=app.split(), bg="gray")
                         lablel.pack()
                 return app_lists
             except:
@@ -31,7 +31,7 @@ def addApp():
     app_lists.append(filename)
     for app in apps:
         if app.split():
-            lablel = tk.Label(frame, text=app, bg="gray")
+            lablel = tk.Label(frame, text=app.split(), bg="gray")
             lablel.pack()
     
     with open('save.dl','w') as f:
