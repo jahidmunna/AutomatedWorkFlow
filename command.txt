@@ -1,1 +1,4 @@
-pyinstaller --onefile --icon="icon.ico" -w app.py
+for windows: 
+    pyinstaller --onefile --icon="icon/icon.ico" -w app.py
+for linux:
+    pyinstaller --onefile --icon="icon/icon.png" -w app.py
