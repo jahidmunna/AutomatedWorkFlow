@@ -44,12 +44,14 @@ def openApp():
             subprocess.call([opener, filename])
 
 root = tk.Tk()
+root.iconbitmap('icon/icon.ico')
+root.title("AWF by JIM")
 
-canvas = tk.Canvas(root, height=700, width=700, bg="#263d42")
+canvas = tk.Canvas(root, height=400, width=400, bg="#263d42")
 canvas.pack()
 
 frame = tk.Frame(root, bg="white")
-frame.place(relwidth=0.8, relheight=0.8, rely=0.1, relx=0.1)
+frame.place(relwidth=0.8, relheight=0.7, rely=0.1, relx=0.1)
 
 openFile = tk.Button(root, text="Open File", padx=10,
                      pady=5, fg="white", bg="#263d42", command=addApp)
