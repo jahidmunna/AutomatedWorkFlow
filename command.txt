@@ -1,0 +1,1 @@
+pyinstaller -–onefile --icon="icon.ico" -w app.py
