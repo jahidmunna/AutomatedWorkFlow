@@ -7,12 +7,16 @@ import sys, subprocess
 def load_prev():
     if os.path.isfile('save.dl'):
         with open ('save.dl') as f:
-            infile = f.readlines()[0]
-            app_lists = infile.split(',')
-            for app in app_lists:
-                lablel = tk.Label(frame, text=app, bg="gray")
-                lablel.pack()
-            return app_lists
+            try:
+                infile = f.readlines()[0]
+                app_lists = infile.split(',')
+                for app in app_lists:
+                    if app.split():
+                        lablel = tk.Label(frame, text=app, bg="gray")
+                        lablel.pack()
+                return app_lists
+            except:
+                return []
             
     return []
 
@@ -26,8 +30,9 @@ def addApp():
     apps.append(filename)
     app_lists.append(filename)
     for app in apps:
-        lablel = tk.Label(frame, text=app, bg="gray")
-        lablel.pack()
+        if app.split():
+            lablel = tk.Label(frame, text=app, bg="gray")
+            lablel.pack()
     
     with open('save.dl','w') as f:
         app_list = ",".join(app_lists)
