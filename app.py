@@ -49,7 +49,14 @@ def openApp():
             subprocess.call([opener, filename])
 
 root = tk.Tk()
-root.iconbitmap('icon/icon.ico')
+
+# set icon
+if sys.platform == "win32":
+    root.iconbitmap('icon/icon.ico')
+else:
+    img = tk.Image("photo", file="icon/icon.png")
+    root.tk.call('wm','iconphoto',root._w, img)
+
 root.title("AWF by JIM")
 
 canvas = tk.Canvas(root, height=400, width=400, bg="#263d42")
